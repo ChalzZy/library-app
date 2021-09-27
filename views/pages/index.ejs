@@ -13,10 +13,21 @@
   <div class="jumbotron">
     <h1>Welcome to the Library</h1>
     <p>Find your next great read.</p>
-
-    <h2>Variable</h2>
+    <h3>How to use</h3>
+    <p>Navigate using the non-user view, user-view and librarian view on the navigation bar.</p>
+    <p>Or click one of the buttons below</p>
+    <button type="button" class="btn btn-primary">Non-user view</button>
+    <button type="button" class="btn btn-secondary">User view</button>
+    <button type="button" class="btn btn-success">Librarian view</button>
+    <h3>Technologies used</h3>
+    <ul>
+      <li>EJS</li>
+      <li>Node.js</li>
+      <li>MongoDB (Mongoose)</li>
+    </ul>
+    <!-- <h2>Variable</h2>
     <p><%= tagline %></p>
-
+    
     <ul>
       <% mascots.forEach(function(mascot) { %>
         <li>
@@ -25,15 +36,17 @@
           born <%= mascot.birth_year %>
         </li>
       <% }); %>
-    </ul>
+    </ul> -->
   </div>
-  <div>
-  </div>
+  <button type="button" class="btn btn-primary" onClick="test()">Primary</button>
 </main>
 
 <footer>
   <%- include('../partials/footer'); %>
 </footer>
-
 </body>
 </html>
+
+<script>
+
+</script>
