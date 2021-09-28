@@ -3,7 +3,10 @@ var app = express();
 const mongoose = require('mongoose');
 const routes = require('./routes/index');
 
-// set the view engine to ejs
+// middleware
+app.use(express.json());
+
+// view engine
 app.set('view engine', 'ejs');
 
 // use res.render to load up an ejs view file
