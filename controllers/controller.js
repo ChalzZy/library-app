@@ -1,3 +1,13 @@
+const mongoose = require("mongoose");
+
+module.exports.index_get = (req, res) => {
+  const book = mongoose.model("book", book);
+
+  res.render("pages/index", {
+    userName: name,
+  });
+};
+
 module.exports.guest_get = (req, res) => {
   res.render("pages/guest");
 };

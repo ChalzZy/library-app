@@ -11,18 +11,7 @@ app.use(express.json());
 // view engine
 app.set("view engine", "ejs");
 
-// use res.render to load up an ejs view file
-
-// index page
-app.get("/", function (req, res) {
-  res.render("pages/index", {});
-});
-
-// // about page
-// app.get('/guest', function(req, res) {
-//   res.render('pages/guest');
-// });
-
+// routes
 app.use(routes);
 
 // mongoose connection
@@ -33,5 +22,6 @@ mongoose.connect(dbURI, {
   useCreateIndex: true,
 });
 
+// launch server
 app.listen(3000);
 console.log("Server is listening on port 3000");

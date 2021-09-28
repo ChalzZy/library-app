@@ -2,6 +2,9 @@ const { Router } = require("express");
 const controller = require("../controllers/controller");
 const router = Router();
 
+// Index page
+router.get("/", controller.index_get);
+
 // Navigation
 router.get("/guest", controller.guest_get);
 router.get("/librarian", controller.librarian_get);
