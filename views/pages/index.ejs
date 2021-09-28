@@ -1,40 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <%- include('../partials/head'); %>
-</head>
-<body class="container">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="container">
+    <header><%- include('../partials/header'); %></header>
 
-<header>
-  <%- include('../partials/header'); %>
-</header>
+    <main>
+      <div class="jumbotron">
+        <h1>Welcome to the Library</h1>
+        <p>Find your next great read.</p>
+        <h3>How to use</h3>
+        <p>
+          Navigate using the non-user view, user-view and librarian view on the
+          navigation bar.
+        </p>
+        <p>Or click one of the buttons below</p>
+        <button type="button" class="btn btn-primary guest-button">
+          Guest
+        </button>
+        <button type="button" class="btn btn-secondary">Librarian</button>
+        <button type="button" class="btn btn-success">Bookworm</button>
+        <h3>Technologies used</h3>
+        <ul>
+          <li>EJS</li>
+          <li>Node.js</li>
+          <li>MongoDB (Mongoose)</li>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-primary" onClick="test()">
+        Primary
+      </button>
+    </main>
 
-<main>
-  <div class="jumbotron">
-    <h1>Welcome to the Library</h1>
-    <p>Find your next great read.</p>
-    <h3>How to use</h3>
-    <p>Navigate using the non-user view, user-view and librarian view on the navigation bar.</p>
-    <p>Or click one of the buttons below</p>
-    <button type="button" class="btn btn-primary">Guest</button>
-    <button type="button" class="btn btn-secondary">Librarian</button>
-    <button type="button" class="btn btn-success">Bookworm</button>
-    <h3>Technologies used</h3>
-    <ul>
-      <li>EJS</li>
-      <li>Node.js</li>
-      <li>MongoDB (Mongoose)</li>
-    </ul>
-  </div>
-  <button type="button" class="btn btn-primary" onClick="test()">Primary</button>
-</main>
-
-<footer>
-  <%- include('../partials/footer'); %>
-</footer>
-</body>
+    <footer><%- include('../partials/footer'); %></footer>
+  </body>
 </html>
 
 <script>
+  const guestButton = document.querySelector(".guest-button");
+  const variable = 2;
 
+  guestButton.addEventListener("click", async (e) => {
+    try {
+      const res = await fetch("/guestButton", {
+        method: "POST",
+        body: JSON.stringify({ variable }),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json, text/plain, */*",
+        },
+      });
+      const data = await res.json;
+      console.log(data);
+    } catch (err) {
+      console.log("ERROR: " + err);
+    }
+  });
 </script>
