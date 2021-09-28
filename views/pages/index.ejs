@@ -15,6 +15,9 @@
           Navigate using the non-user view, user-view and librarian view on the
           navigation bar.
         </p>
+        <!-- <% bookList.forEach(book => { %>
+        <p><%= book.title %></p>
+        <%})%> -->
         <p>Or click one of the buttons below</p>
         <button type="button" class="btn btn-primary guest-button">
           Guest
@@ -31,18 +34,17 @@
     </main>
     <div class="container d-flex justify-content-center">
       <div class="row">
+        <% bookList.forEach(book => { %>
         <div class="card" style="width: 18rem">
           <div class="card-body">
-            <h5 class="card-title"><%= userName %></h5>
+            <h5 class="card-title"><%= book.title %></h5>
             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <p class="card-text"><%= book.overview %></p>
             <a href="#" class="card-link">Card link</a>
             <a href="#" class="card-link">Another link</a>
           </div>
         </div>
+        <%})%>
       </div>
     </div>
     <footer><%- include('../partials/footer'); %></footer>

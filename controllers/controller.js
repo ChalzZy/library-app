@@ -1,11 +1,13 @@
 const mongoose = require("mongoose");
+const Book = require("../models/book");
 
 module.exports.index_get = (req, res) => {
-  const book = mongoose.model("book", book);
-
-  res.render("pages/index", {
-    userName: name,
+  Book.find({}, function (err, book) {
+    res.render("pages/index", {
+      bookList: book,
+    });
   });
+  //res.render("pages/index", {});
 };
 
 module.exports.guest_get = (req, res) => {

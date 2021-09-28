@@ -15,11 +15,10 @@ app.set("view engine", "ejs");
 app.use(routes);
 
 // mongoose connection
-const dbURI = "mongodb://localhost:27017/node-auth";
+const dbURI = "mongodb://localhost:27017/authors";
 mongoose.connect(dbURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
 });
 
 // launch server
