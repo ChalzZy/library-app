@@ -4,6 +4,8 @@ EJS, Node.js, Express, MongoDB 'Library Website'
 
 ## Description
 
+[Click here for live website hosted on Heroku](https://library-renti.herokuapp.com/).
+
 ![](https://i.imgur.com/AnAop4R.png)
 
 This application is an example of using MongoDB and displaying data onto a website, which in this example is a Library page.
