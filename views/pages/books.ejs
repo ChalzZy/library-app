@@ -21,6 +21,10 @@
       </div>
       <input type="text" id="search-book" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
     </div>
+    <!-- 'TIP' notice -->
+    <div>
+      <p><b>TIP:</b> Search for "American Dreams" (Case-sensitive)</p>
+    </div>
     <!-- Repeating card -->
     <div class="container pt-5">
         <div class="row d-flex justify-content-center">
@@ -51,6 +55,7 @@
 </html>
 
 <script>
+  // Searches for book that user chooses
   function search() {
     const text = document.getElementById("search-book").value;
     console.log("User text: " + text);

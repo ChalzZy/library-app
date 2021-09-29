@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
     <title>Document</title>
   </head>
   <body class="container">
@@ -12,15 +17,20 @@
     <!-- Search bar -->
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <button class="btn btn-outline-secondary" type="button">Search Authors</button>
+        <button class="btn btn-outline-secondary" type="button" onClick="search()">Search Authors</button>
       </div>
-      <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+      <input type="text" id="search-author" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+    </div>
+    <!-- 'TIP' notice -->
+    <div>
+      <p><b>TIP:</b> Search for "Thomas Wolfe" (Case-sensitive)</p>
     </div>
     <!-- Repeating card -->
     <div class="container pt-5">
         <div class="row d-flex justify-content-center">
           <% authorList.forEach(author => { %>
           <div class="card" style="width: 18rem">
+            <div id="<%= author.title %>"></div>
             <div class="card-body">
               <h5 class="card-title"><%= author.title %></h5>
               <p class="card-text text-break"></p>
@@ -33,3 +43,12 @@
   </body>
   <%- include('../partials/footer'); %></footer>
 </html>
+
+<script>
+  // Searches for author that user chooses
+  function search() {
+    const text = document.getElementById("search-author").value;
+    console.log("User text: " + text);
+    window.location.href = "#" + text
+  }
+</script>
