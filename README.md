@@ -15,6 +15,11 @@ This application is an example of using MongoDB and displaying data onto a websi
 - Recent version of Windows 10 or MacOS
 - Recent version of [Node.js/npm](https://nodejs.org/en/)
 
+## Sample data
+
+- Books [here](https://www.usabledatabases.com/database/books-isbn-covers/sample/files/book.csv)
+- Authors [here](https://www.usabledatabases.com/database/books-isbn-covers/sample/files/author.csv)
+
 ### Installing
 
 #### Windows
