@@ -4,7 +4,7 @@ EJS, Node.js, Express, MongoDB 'Library Website'
 
 ## Description
 
-![alt text](https://imgur.com/a/seI8TOf "Library home page")
+![](https://imgur.com/a/seI8TOf)
 
 This application is an example of using MongoDB and displaying data onto a website, which in this example is a Library page.
 
