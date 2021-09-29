@@ -3,6 +3,7 @@ var app = express();
 const mongoose = require("mongoose");
 const routes = require("./routes/index");
 const cors = require("cors");
+require("dotenv").config();
 
 // middleware
 app.use(cors());
@@ -15,7 +16,7 @@ app.set("view engine", "ejs");
 app.use(routes);
 
 // mongoose connection
-const dbURI = "mongodb://localhost:27017/authors";
+const dbURI = process.env.DATABASE;
 mongoose.connect(dbURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
