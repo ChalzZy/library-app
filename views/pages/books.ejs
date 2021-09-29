@@ -10,18 +10,33 @@
   <body class="container">
     <header><%- include('../partials/header'); %></header>
     <h1 class="d-flex justify-content-center pt-2">Books List</h1>
+    <!-- Search bar -->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <button id="search-button" class="btn btn-outline-secondary" type="button">Search Books</button>
+      </div>
+      <input type="text" id="search-book" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+    </div>
     <!-- Repeating card -->
     <div class="container pt-5">
         <div class="row d-flex justify-content-center">
           <% bookList.forEach(book => { %>
           <div class="card" style="width: 18rem">
             <div class="card-body">
-              <h5 class="card-title"><%= book.title %></h5>
-              <h6 class="card-subtitle mb-2 text-muted">ISBN: <%= book.isbn13 %></h6>
-              <p class="card-text text-break"></p>
-              <h6 class="card-subtitle mb-2 text-muted">Author: <%= book.author %></h6>
-              <button type="button" class="btn btn-primary btn-sm">More info</button>
-              <button type="button" class="btn btn-primary btn-sm">Author</button>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                <label class="form-check-label" for="invalidCheck2">
+                  Tick to book
+                </label>
+              </div>
+              <div id="<%= book.title %>"></div>
+                <h5 class="card-title"><%= book.title %></h5>
+                <h6 class="card-subtitle mb-2 text-muted">ISBN: <%= book.isbn13 %></h6>
+                <p class="card-text text-break"></p>
+                <h6 class="card-subtitle mb-2 text-muted">Author: <%= book.author %></h6>
+                <button type="button" class="btn btn-primary btn-sm">More info</button>
+                <button type="button" class="btn btn-primary btn-sm">Author</button>
+              
             </div>
           </div>
           <%})%>
