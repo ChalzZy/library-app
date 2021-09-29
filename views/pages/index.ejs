@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body class="container">
     <header><%- include('../partials/header'); %></header>
@@ -10,36 +11,16 @@
       <div class="jumbotron">
         <h1>Welcome to the Library</h1>
         <p>Find your next great read.</p>
-        <h3>How to use</h3>
-        <p>
-          Navigate using the non-user view, user-view and librarian view on the
-          navigation bar.
-        </p>
-        <!-- <% bookList.forEach(book => { %>
-        <p><%= book.title %></p>
-        <%})%> -->
-        <p>Or click one of the buttons below</p>
-        <button type="button" class="btn btn-primary guest-button">
-          Guest
-        </button>
-        <button type="button" class="btn btn-secondary">Librarian</button>
-        <button type="button" class="btn btn-success">Bookworm</button>
-        <h3>Technologies used</h3>
-        <ul>
-          <li>EJS</li>
-          <li>Node.js</li>
-          <li>MongoDB (Mongoose)</li>
-        </ul>
       </div>
     </main>
-    <div class="container d-flex justify-content-center">
-      <div class="row">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
         <% bookList.forEach(book => { %>
         <div class="card" style="width: 18rem">
           <div class="card-body">
             <h5 class="card-title"><%= book.title %></h5>
             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text"><%= book.overview %></p>
+            <p class="card-text text-break"></p>
             <a href="#" class="card-link">Card link</a>
             <a href="#" class="card-link">Another link</a>
           </div>
