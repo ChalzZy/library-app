@@ -1,0 +1,30 @@
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body class="container">
+    <header><%- include('../partials/header'); %></header>
+    <h1 class="d-flex justify-content-center pt-2">Authors List</h1>
+    <div class="container pt-5">
+        <div class="row d-flex justify-content-center">
+          <% authorList.forEach(author => { %>
+          <div class="card" style="width: 18rem">
+            <div class="card-body">
+              <h5 class="card-title"><%= author.title %></h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text text-break"></p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+          <%})%>
+        </div>
+      </div>
+  </body>
+  <%- include('../partials/footer'); %></footer>
+</html>

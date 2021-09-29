@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Book = require("../models/book");
+const Author = require("../models/author");
 
 module.exports.index_get = (req, res) => {
   Book.find({}, function (err, book) {
@@ -7,19 +8,24 @@ module.exports.index_get = (req, res) => {
       bookList: book,
     });
   });
-  //res.render("pages/index", {});
 };
 
-module.exports.guest_get = (req, res) => {
-  res.render("pages/guest");
+module.exports.authors_get = (req, res) => {
+  Author.find({}, function (err, author) {
+    res.render("pages/authors", {
+      authorList: author,
+    });
+  });
+  //res.render("pages/authors");
 };
 
-module.exports.librarian_get = (req, res) => {
-  res.render("pages/librarian");
-};
-
-module.exports.bookworm_get = (req, res) => {
-  res.render("pages/bookworm");
+module.exports.books_get = (req, res) => {
+  Book.find({}, function (err, book) {
+    res.render("pages/books", {
+      bookList: book,
+    });
+  });
+  //res.render("pages/books");
 };
 
 module.exports.guestButton_post = async (req, res) => {
